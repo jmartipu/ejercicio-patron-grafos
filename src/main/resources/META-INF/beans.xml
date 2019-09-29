@@ -3,7 +3,9 @@
        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd" >
        
     <alternatives>
-        <class>ejemplo.Sha256</class>
+    	<class>grafos.ArcoSinPeso</class>
+    	<class>grafos.GrafoNoDirigidoSinPeso</class>
+    	<class>grafos.TipoBusquedaBFS</class>
     </alternatives>
     
 </beans>  

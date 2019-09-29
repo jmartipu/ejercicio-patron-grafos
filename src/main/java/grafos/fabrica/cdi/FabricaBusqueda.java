@@ -1,24 +1,26 @@
-package ejemplo.fabrica.cdi;
+package grafos.fabrica.cdi;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 
-import ejemplo.AlgoritmoHash;
+import grafos.IArco;
+import grafos.ITipoBusqueda;
+public class FabricaBusqueda {
+	
 
-public class MainConCDI {
-
-	public static void main(String[] args) {
+	public static ITipoBusqueda getTipoBusqueda() {
 		
 		try {
 			SeContainer container = SeContainerInitializer.newInstance().initialize();			
-			AlgoritmoHash algoritmo = container.select(AlgoritmoHash.class).get();
+			ITipoBusqueda tipoBusqueda = container.select(ITipoBusqueda.class).get();
+			return tipoBusqueda;
 			
-			System.out.println(algoritmo.codificar("Este es un ejemplo"));
 			
 		} catch (Exception e) {
 			// muestra mensajes de error
 			System.err.println(e.getMessage());
 			e.printStackTrace();
+			return null;
 		}
 		
 		
